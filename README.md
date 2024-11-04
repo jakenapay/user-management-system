@@ -127,17 +127,22 @@
         <strong>Configure Environment Variables</strong>
         <ul>
           <li>Copy the provided <code>env</code> file to create a <code>.env</code> file in the project’s root directory:
-          <pre><code>cp env .env</code></pre>
+          ```
+          cp env .env
+          ```
           </li>
-          <li>Open <code>.env</code> and adjust settings based on your environment:
+          <li>Open ``` .env ``` and adjust settings based on your environment:
             <ul>
               <li><strong>App Base URL</strong>: Update <code>app.baseURL</code> to reflect the local environment.</li>
               <li><strong>Database</strong>: Configure your database settings under <code>database.default</code> for the local database connection:
-              <pre><code>database.default.hostname = localhost<br/>
-database.default.database = your_database_name<br/>
-database.default.username = your_database_user<br/>
-database.default.password = your_database_password<br/>
-database.default.DBDriver = MySQLi  # Change if you're using another DB driver</code></pre>
+              
+              ```
+              database.default.hostname = localhost<br/>
+              database.default.database = your_database_name<br/>
+              database.default.username = your_database_user<br/>
+              database.default.password = your_database_password<br/>
+              database.default.DBDriver = MySQLi  # Change if you're using another DB driver
+              ```
               </li>
             </ul>
           </li>
