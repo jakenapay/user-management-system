@@ -109,11 +109,13 @@ cd <project_directory>
 2. Install Dependencies
 
 - Run the following command to install dependencies:
-```composer install
+```
+composer install
 ```
 
 - To check for and apply updates to dependencies, run:
-```composer update
+```
+composer update
 ```
 
 3. Configure Environment Variables
