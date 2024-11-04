@@ -104,7 +104,7 @@
 
     ### Step-by-Step Setup Guide
 
-1. **Clone or Copy the Project Files**
+1. Clone or Copy the Project Files
    - If you’re copying a project, transfer all project files to the desired directory on the local machine.
    - If using Git, clone the repository:
      ```bash
@@ -112,7 +112,7 @@
      cd <project_directory>
      ```
 
-2. **Install Dependencies**
+2. Install Dependencies
    - Run the following command to install dependencies:
      ```bash
      composer install
@@ -122,15 +122,15 @@
      composer update
      ```
 
-3. **Configure Environment Variables**
+3. Configure Environment Variables
    - Copy the provided `env` file to create a `.env` file in the project’s root directory:
      ```bash
      cp env .env
      ```
    - Open `.env` and adjust settings based on your environment:
-     - **App Base URL**: Update `app.baseURL` to reflect the local environment.
-     - **Database**: Configure your database settings under `database.default` for the local database connection:
-       ```plaintext
+     - App Base URL: Update `app.baseURL` to reflect the local environment.
+     - Database: Configure your database settings under `database.default` for the local database connection:
+       ```
        database.default.hostname = localhost
        database.default.database = your_database_name
        database.default.username = your_database_user
