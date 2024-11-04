@@ -102,48 +102,42 @@
       </li>
     </ol>
 
-    <h4>Step-by-Step Setup Guide</h4>
-    <ol>
-      <li>
-        <strong>Clone or Copy the Project Files</strong>
-        <ul>
-          <li>If you’re copying a project, transfer all project files to the desired directory on the local machine.</li>
-          <li>If using Git, clone the repository:
-          <pre><code>git clone &lt;repository_url&gt;<br/>cd &lt;project_directory&gt;</code></pre>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <strong>Install Dependencies</strong>
-        <ul>
-          <li>Run the following command to install dependencies:
-          <pre><code>composer install</code></pre>
-          </li>
-          <li>To check for and apply updates to dependencies, run:
-          <pre><code>composer update</code></pre>
-          </li>
-        </ul>
-      </li>
-      <li>
-        <strong>Configure Environment Variables</strong>
-        <ul>
-          <li>Copy the provided <code>env</code> file to create a <code>.env</code> file in the project’s root directory:
-          <pre><code>cp env .env</code></pre>
-          </li>
-          <li>Open <code>.env</code> and adjust settings based on your environment:
-            <ul>
-              <li><strong>App Base URL</strong>: Update <code>app.baseURL</code> to reflect the local environment.</li>
-              <li><strong>Database</strong>: Configure your database settings under <code>database.default</code> for the local database connection:
-              <pre><code>database.default.hostname = localhost<br/>
-database.default.database = your_database_name<br/>
-database.default.username = your_database_user<br/>
-database.default.password = your_database_password<br/>
-database.default.DBDriver = MySQLi  # Change if you're using another DB driver</code></pre>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </li>
+    ### Step-by-Step Setup Guide
+
+1. **Clone or Copy the Project Files**
+   - If you’re copying a project, transfer all project files to the desired directory on the local machine.
+   - If using Git, clone the repository:
+     ```bash
+     git clone <repository_url>
+     cd <project_directory>
+     ```
+
+2. **Install Dependencies**
+   - Run the following command to install dependencies:
+     ```bash
+     composer install
+     ```
+   - To check for and apply updates to dependencies, run:
+     ```bash
+     composer update
+     ```
+
+3. **Configure Environment Variables**
+   - Copy the provided `env` file to create a `.env` file in the project’s root directory:
+     ```bash
+     cp env .env
+     ```
+   - Open `.env` and adjust settings based on your environment:
+     - **App Base URL**: Update `app.baseURL` to reflect the local environment.
+     - **Database**: Configure your database settings under `database.default` for the local database connection:
+       ```plaintext
+       database.default.hostname = localhost
+       database.default.database = your_database_name
+       database.default.username = your_database_user
+       database.default.password = your_database_password
+       database.default.DBDriver = MySQLi  # Change if you're using another DB driver
+       ```
+
       <li>
         <strong>Set Up the Database</strong>
         <ul>
