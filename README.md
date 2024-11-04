@@ -63,6 +63,102 @@ PHP version 8.1 or higher is required, with the following extensions installed:
 
 Additionally, make sure that the following extensions are enabled in your PHP:
 
+
+
 - json (enabled by default - don't turn it off)
 - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
 - [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+
+- - - -
+
+# Setting Up the CodeIgniter Project on a Local Machine
+
+To set up a CodeIgniter 4 project on another local machine, follow these steps:
+
+### Prerequisites
+
+1. Ensure the following requirements are met before starting:
+
+PHP: Version 8.1 or higher is required. Check your PHP version with:
+```php -v
+```
+
+2. Required PHP Extensions:
+
+> - intl: For internationalization.
+> - mbstring: For handling multibyte strings.
+> - json (enabled by default).
+> - mysqlnd: Needed if using MySQL.
+> - libcurl: Required if using HTTP\CURLRequest library.
+
+3. Composer: This is required to manage dependencies. If it is not installed, download it from getcomposer.org.
+
+## Step-byStep Setup Guide
+
+1. Clone or Copy the Project Files
+
+- If you’re copying a project, transfer all project files to the desired directory on the local machine.
+- If using Git, clone the repository:
+
+```git clone <repository_url>
+cd <project_directory>
+```
+
+2. Install Dependencies
+
+- Run the following command to install dependencies:
+```composer install
+```
+
+- To check for and apply updates to dependencies, run:
+```composer update
+```
+
+3. Configure Environment Variables
+
+- Copy the provided env file to create a .env file in the project’s root directory:
+```cp env .env
+```
+
+- Open .env and adjust settings based on your environment:
+> - App Base URL: Update app.baseURL to reflect the local environment.
+> - Database: Configure your database settings under database.default for the local database connection:
+
+```database.default.hostname = localhost
+database.default.database = your_database_name
+database.default.username = your_database_user
+database.default.password = your_database_password
+database.default.DBDriver = MySQLi # Change if you're using another DB driver
+```
+
+4. Set Up the Database
+
+- If your project includes database migrations or seed files, run these commands to set up the database schema:
+```php spark migrate
+php spark db:seed <SeederClassName>  # Optional, if seeder classes are available
+```
+
+## Set Up Web Server
+- By default, CodeIgniter 4’s index.php is located inside the public folder for security reasons. Point your server’s root directory to this public folder, not the project root.
+- If using Apache or Nginx, configure a virtual host to point to the public directory.
+- Using PHP’s Built-In Server: If you don’t have a configured web server, you can use PHP’s built-in server for development:
+
+```php spark serve
+```
+By default, this will start the server on http://localhost:8080. You can access the application there.
+
+6. Verify Permissions
+
+- Make sure that the writable directory in the project has appropriate write permissions, as CodeIgniter will store cache files, session files, and logs here:
+```chmod -R 775 writable/
+```
+
+7. Testing the Application
+
+- After setting up, navigate to the base URL of the application in your browser (e.g., http://localhost:8080 or your configured local server address) to confirm that the application runs successfully.
+
+## Troubleshooting Tips
+
+- Check PHP Extensions: Use php -m to list installed PHP modules and verify required extensions are enabled.
+- Review Logs: Any issues encountered should be recorded in the writable/logs directory, where you can review error logs to troubleshoot.
+- Verify Database Connection: Double-check .env file database settings and ensure the local database server is running.
