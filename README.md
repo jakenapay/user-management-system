@@ -80,7 +80,8 @@ To set up a CodeIgniter 4 project on another local machine, follow these steps:
 1. Ensure the following requirements are met before starting:
 
 PHP: Version 8.1 or higher is required. Check your PHP version with:
-```php -v
+```
+php -v
 ```
 
 2. Required PHP Extensions:
@@ -100,7 +101,8 @@ PHP: Version 8.1 or higher is required. Check your PHP version with:
 - If you’re copying a project, transfer all project files to the desired directory on the local machine.
 - If using Git, clone the repository:
 
-```git clone <repository_url>
+```
+git clone <repository_url>
 cd <project_directory>
 ```
 
@@ -117,14 +119,16 @@ cd <project_directory>
 3. Configure Environment Variables
 
 - Copy the provided env file to create a .env file in the project’s root directory:
-```cp env .env
+```
+cp env .env
 ```
 
 - Open .env and adjust settings based on your environment:
 > - App Base URL: Update app.baseURL to reflect the local environment.
 > - Database: Configure your database settings under database.default for the local database connection:
 
-```database.default.hostname = localhost
+```
+database.default.hostname = localhost
 database.default.database = your_database_name
 database.default.username = your_database_user
 database.default.password = your_database_password
@@ -134,7 +138,8 @@ database.default.DBDriver = MySQLi # Change if you're using another DB driver
 4. Set Up the Database
 
 - If your project includes database migrations or seed files, run these commands to set up the database schema:
-```php spark migrate
+```
+php spark migrate
 php spark db:seed <SeederClassName>  # Optional, if seeder classes are available
 ```
 
@@ -143,14 +148,16 @@ php spark db:seed <SeederClassName>  # Optional, if seeder classes are available
 - If using Apache or Nginx, configure a virtual host to point to the public directory.
 - Using PHP’s Built-In Server: If you don’t have a configured web server, you can use PHP’s built-in server for development:
 
-```php spark serve
+```
+php spark serve
 ```
 By default, this will start the server on http://localhost:8080. You can access the application there.
 
 6. Verify Permissions
 
 - Make sure that the writable directory in the project has appropriate write permissions, as CodeIgniter will store cache files, session files, and logs here:
-```chmod -R 775 writable/
+```
+chmod -R 775 writable/
 ```
 
 7. Testing the Application
