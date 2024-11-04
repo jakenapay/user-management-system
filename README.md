@@ -102,7 +102,7 @@
       </li>
     </ol>
 
-    ### Step-by-Step Setup Guide
+    ### Step-by-Step Setup Guide ###
 
 1. Clone or Copy the Project Files
    - If you’re copying a project, transfer all project files to the desired directory on the local machine.
