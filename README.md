@@ -94,7 +94,7 @@ php -v
 
 3. Composer: This is required to manage dependencies. If it is not installed, download it from getcomposer.org.
 
-## Step-byStep Setup Guide
+## Step-by-Step Setup Guide
 
 1. Clone or Copy the Project Files
 
