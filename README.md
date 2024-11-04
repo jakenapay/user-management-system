@@ -82,8 +82,7 @@
     To set up a CodeIgniter 4 project on another local machine, follow these steps:
     <h4>Prerequisites</h4>
     <ol>
-      <li>
-        Ensure the following requirements are met before starting:
+      <li>Ensure the following requirements are met before starting:
         <ul>
           <li>PHP: Version 8.1 or higher is required. Check your PHP version with:
           <pre><code>php -v</code></pre>
@@ -102,42 +101,48 @@
       </li>
     </ol>
 
-    ### Step-by-Step Setup Guide ###
-
-1. Clone or Copy the Project Files
-   - If you’re copying a project, transfer all project files to the desired directory on the local machine.
-   - If using Git, clone the repository:
-     ```bash
-     git clone <repository_url>
-     cd <project_directory>
-     ```
-
-2. Install Dependencies
-   - Run the following command to install dependencies:
-     ```bash
-     composer install
-     ```
-   - To check for and apply updates to dependencies, run:
-     ```bash
-     composer update
-     ```
-
-3. Configure Environment Variables
-   - Copy the provided `env` file to create a `.env` file in the project’s root directory:
-     ```bash
-     cp env .env
-     ```
-   - Open `.env` and adjust settings based on your environment:
-     - App Base URL: Update `app.baseURL` to reflect the local environment.
-     - Database: Configure your database settings under `database.default` for the local database connection:
-       ```
-       database.default.hostname = localhost
-       database.default.database = your_database_name
-       database.default.username = your_database_user
-       database.default.password = your_database_password
-       database.default.DBDriver = MySQLi  # Change if you're using another DB driver
-       ```
-
+    <h4>Step-by-Step Setup Guide</h4>
+    <ol>
+      <li>
+        <strong>Clone or Copy the Project Files</strong>
+        <ul>
+          <li>If you’re copying a project, transfer all project files to the desired directory on the local machine.</li>
+          <li>If using Git, clone the repository:
+          <pre><code>git clone &lt;repository_url&gt;<br/>cd &lt;project_directory&gt;</code></pre>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Install Dependencies</strong>
+        <ul>
+          <li>Run the following command to install dependencies:
+          <pre><code>composer install</code></pre>
+          </li>
+          <li>To check for and apply updates to dependencies, run:
+          <pre><code>composer update</code></pre>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Configure Environment Variables</strong>
+        <ul>
+          <li>Copy the provided <code>env</code> file to create a <code>.env</code> file in the project’s root directory:
+          <pre><code>cp env .env</code></pre>
+          </li>
+          <li>Open <code>.env</code> and adjust settings based on your environment:
+            <ul>
+              <li><strong>App Base URL</strong>: Update <code>app.baseURL</code> to reflect the local environment.</li>
+              <li><strong>Database</strong>: Configure your database settings under <code>database.default</code> for the local database connection:
+              <pre><code>database.default.hostname = localhost<br/>
+database.default.database = your_database_name<br/>
+database.default.username = your_database_user<br/>
+database.default.password = your_database_password<br/>
+database.default.DBDriver = MySQLi  # Change if you're using another DB driver</code></pre>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
       <li>
         <strong>Set Up the Database</strong>
         <ul>
@@ -154,4 +159,31 @@ php spark db:seed &lt;SeederClassName&gt;  # Optional, if seeder classes are ava
           <li>If using Apache or Nginx, configure a virtual host to point to the <em>public</em> directory.</li>
           <li>Using PHP’s Built-In Server: If you don’t have a configured web server, you can use PHP’s built-in server for development:
           <pre><code>php spark serve</code></pre>
-          By default, this will start the server on <a href="http://localhost:8080">http
+          By default, this will start the server on <a href="http://localhost:8080">http</a> and you can access the application there.</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Verify Permissions</strong>
+        <ul>
+          <li>Make sure that the writable directory in the project has appropriate write permissions, as CodeIgniter will store cache files, session files, and logs here:
+          <pre><code>chmod -R 775 writable/</code></pre>
+          </li>
+        </ul>
+      </li>
+      <li>
+        <strong>Testing the Application</strong>
+        <ul>
+          <li>After setting up, navigate to the base URL of the application in your browser (e.g., <a href="http://localhost:8080">http://localhost:8080</a> or your configured local server address) to confirm that the application runs successfully.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <h4>Troubleshooting Tips</h4>
+    <ul>
+      <li>Check PHP Extensions: Use <code>php -m</code> to list installed PHP modules and verify required extensions are enabled.</li>
+      <li>Review Logs: Any issues encountered should be recorded in the <code>writable/logs</code> directory, where you can review error logs to troubleshoot.</li>
+      <li>Verify Database Connection: Double-check <code>.env</code> file database settings and ensure the local database server is running.</li>
+    </ul>
+  </p>
+</details>
+
